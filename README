@@ -1,0 +1,23 @@
+Push notifications
+
+This application provides integration with third party gateways for push notifications like SMS.
+
+Supported gateways/protocols:
+- Twilio/SMS - http://www.twilio.com/sms/
+
+++ Twilio gateway setup
+1) Create an account @ https://www.twilio.com/try-twilio
+2) Follow the instructions for activating your demo app
+3) Edit the twilio stanza found in push/default/gateway.conf with your twilio account settings.
+   NOTE: 
+   * PLEASE READ the "GET STARTED IN THREE STEPS" "TRY IT" paragraph @ https://www.twilio.com/user/account
+   ** When using the demo app, the to_number is limited to the number of the phone you activated your demo account with.
+   *** Make sure the from_number matches the "Number" found in your Twilio sandbox
+4) Restart splunk for the new settings to apply:
+   splunk restart
+5) Goto the main search UI and run the following search to test if your settings are correct:
+   index=_internal | head 1 | pushsms to_number="XXXXXXXXXX" message="hello world"
+   NOTE:
+   * Error messages having a twilio.com URL's are really useful for debugging configuration problems.
+   ** You can always use Splunk to further debug configuration problems using the saved search "Push Debug"
+      available in the main search UI under "Searches & Reports" OR http://YOURHOST:YOURPORT/app/search/flashtimeline?s=Push%20Debug
