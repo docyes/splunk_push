@@ -1,4 +1,9 @@
-Push notifications
+                                            __     __   
+                      .-----..--.--..-----.|  |--.|_ `. 
+                      |  _  ||  |  ||__ --||     |  \  \
+                      |   __||_____||_____||__|__| _/  /
+                      |__|                        |__,' 
+                      Push notifications for splunk
 
 This application provides integration with third party gateways for push notifications like SMS.
 
